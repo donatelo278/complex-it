@@ -1,62 +1,47 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+Laravel Тестовое задание
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Добрый день. Спасибо за отзыв на нашу вакансию. Пожалуйста выполните приведенное тестовое задание
 
-## About Laravel
+# Задание
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Сделайте простейший анонимный блог с минимальным функционалом 
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Функционал авторства можно пропустить 
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Страницы
 
-## Learning Laravel
+- Главная (на ней  5 последних постов с пагинацией)
+- Страница поста (на ней пост, линк, на автора ( автор это ИП адрес создателя поста), коментарии
+- Страница автора (на ней 5 последних постов с пагинацией). Этап 2, можно пропустить
+- Страница создание поста (у поста есть тайт, и дескрипшен большой, валидация на длину добавить)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Технические требования
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- docker-compose (опционально)
+- Latest php version (7.4+, best to use 8)
+- Mysql, mariadb as database
+- Фронт может быть самый простой, он просто должен быть. Любой фреймворк устроит  (bootstrap, bulma, etc)
+- Считайте что это продакшен решение и добавьте все необходимые проверки и валидации по безопасности
 
-## Laravel Sponsors
+## Формат сдачи
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+- Гит (гитхаб, гитлаб) публичный репозиторий
+- Migrations for SQL
+- Seeds (optional)
+- Документация базовая как развернуть проект
 
-### Premium Partners
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+// Документация как развернуть
+1. Залить проект на сервер в папку домена, в настройках домена указать путь до /public
+	Прописать комманды в консоли (см п.4)
+	chmod -R 777 storage
+	chmod -R 777 bootstrap/cache
+2. Установить composer
+3. Перейти в папку где лежит проект
+4. Ввести команду через ssh (подключиться можно например через putty) composer install
+5. Скопировать .env.example туже же где он лежит и изменить его имя на просто .env
+6. Прописать настройки своей базы данных в .env: логин, пароль и localhost
+7. Ввести команду php artisan config:clear
+8. Ввести команду php artisan migrate
+9. Ввести команду php artisan db:seed
+	
