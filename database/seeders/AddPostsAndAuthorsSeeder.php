@@ -21,7 +21,6 @@ class AddPostsAndAuthorsSeeder extends Seeder
         {
             Author::query()->create([
                 'name' => 'author_'.$i,
-                'uuid' => Str::uuid()
             ]);
         }
 
