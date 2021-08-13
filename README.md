@@ -33,6 +33,9 @@ Laravel Тестовое задание
 
 // Документация как развернуть
 1. Залить проект на сервер в папку домена, в настройках домена указать путь до /public
+	Прописать комманды в консоли (см п.4)
+	chmod -R 777 storage
+	chmod -R 777 bootstrap/cache
 2. Установить composer
 3. Перейти в папку где лежит проект
 4. Ввести команду через ssh (подключиться можно например через putty) composer install
@@ -40,6 +43,5 @@ Laravel Тестовое задание
 6. Прописать настройки своей базы данных в .env: логин, пароль и localhost
 7. Ввести команду php artisan config:clear
 8. Ввести команду php artisan migrate
-9. Прописать команды
-	chmod -R 777 storage
-	chmod -R 777 bootstrap/cache
+9. Ввести команду php artisan db:seed
+	
